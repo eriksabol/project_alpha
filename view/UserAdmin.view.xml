@@ -1,0 +1,18 @@
+<mvc:View
+  controllerName="Project_2.controller.UserAdmin"
+  xmlns:l="sap.ui.layout"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns:tnt="sap.tnt"
+	xmlns:micro="sap.suite.ui.microchart"
+  xmlns="sap.m" id="userAdminID">
+  <App>
+		<pages>
+      <Page title="UserAdmin Page" id="UserAdminID" showHeader="true" showNavButton="true" navButtonPress="onBackPress">
+        <content>
+					
+     		</content>
+      </Page>
+    </pages>
+	</App>
+</mvc:View>

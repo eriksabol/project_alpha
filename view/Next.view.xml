@@ -1,0 +1,60 @@
+<mvc:View
+  controllerName="Project_2.controller.Next"
+  xmlns:l="sap.ui.layout"
+  xmlns:mvc="sap.ui.core.mvc"
+  xmlns:core="sap.ui.core"
+  xmlns:tnt="sap.tnt"
+	xmlns:micro="sap.suite.ui.microchart"
+  xmlns="sap.m" id="nextViewID">
+  <App>
+		<pages>
+      <Page title="Next Page" id="NextPageID" showHeader="false">
+        <content>
+        	<tnt:ToolHeader>
+		        <Text text="Administrator" wrapping="false">
+			        <layoutData>
+				        <OverflowToolbarLayoutData priority="NeverOverflow" />
+			        </layoutData>
+		        </Text>
+		        <ToolbarSpacer />
+		          <core:Icon src="sap-icon://activate">
+		          </core:Icon>
+		          <Text text="BI 4 REST API" wrapping="false">
+			          <layoutData>
+				         <OverflowToolbarLayoutData priority="Disappear" />
+			          </layoutData>
+		          </Text>
+		        <ToolbarSpacer />
+		        <Button text="Logout" type="Transparent" press="onUserNamePress">
+		        	<layoutData>
+				        <OverflowToolbarLayoutData priority="NeverOverflow" />
+			        </layoutData>
+		        </Button>
+	      </tnt:ToolHeader>
+				<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Services" subheader="Total" press="press">
+		<TileContent unit="Unit" footer="Running">
+			<NumericContent value="24" icon="sap-icon://line-charts" />
+		</TileContent>
+	</GenericTile>
+	<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="File Repository" subheader="Storage" press="press">
+			<TileContent unit="MB" footer="Free">
+			<NumericContent value="24" icon="sap-icon://line-charts" />
+		</TileContent>
+	</GenericTile>
+		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="File Repository" subheader="Storage" press="press">
+			<TileContent unit="MB" footer="Free">
+			<micro:RadialMicroChart percentage="95.9" valueColor="Neutral"/>
+		</TileContent>
+	</GenericTile>
+		<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="User Administration"
+		subheader="Actions" press="onUserAdminPress">
+		<TileContent footer="Users">
+			<NumericContent value="368" icon="sap-icon://key-user-settings" />
+		</TileContent>
+	</GenericTile>
+      <Button id="backButton" type="Emphasized" text="Logout" press="onBackPress" class="sapUiContentPadding" />
+      </content>
+      </Page>
+    </pages>
+	</App>
+</mvc:View>

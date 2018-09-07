@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>OpenUI5 Hello World App</title>
+	<script
+		id="sap-ui-bootstrap"
+		src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+		data-sap-ui-theme="sap_belize"
+		data-sap-ui-libs="sap.m, sap.suite.ui.microchart"
+		data-sap-ui-resourceroots='{"Project_2": ""}'
+		data-sap-ui-preload=""
+		displayBlock="true">
+	</script>
+	
+<!-- 	<script>
+		sap.ui.getCore().attachInit(function () {
+			sap.ui.xmlview({
+			  viewName: "Project_2.view.App"
+			}).placeAt("content");
+		});
+		</script> -->
+
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell("myShell", {
+					app: new sap.ui.core.ComponentContainer("myContainer", {
+						height : "100%",
+						name : "Project_2"
+					}),
+					appWidthLimited: false
+				}).placeAt("content");
+			});
+		</script>
+
+</head>
+<body class="sapUiBody" id="content">
+</body>
+</html>

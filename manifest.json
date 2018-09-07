@@ -1,0 +1,101 @@
+{
+	"_version": "1.7.0",
+	"sap.app": {
+		"id": "Project_2",
+		"type": "application",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "Title",
+		"description": "AppDescription",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.40.12"
+		}
+	},
+
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+
+		]
+	},
+
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "Project_2.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.40.12",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+
+		"routing": {
+				"config": {
+					"routerClass": "sap.m.routing.Router",
+					"viewType": "XML",
+					"viewPath": "Project_2.view",
+					"controlId": "myApp",
+					"controlAggregation": "pages"
+
+				},
+
+				"routes": [{
+					"pattern": "",
+					"name": "App",
+					"view": "App",
+					"controlAggregation": "pages"
+				}, {
+					"pattern": "Next",
+					"name": "Next",
+					"target": "Next",
+					"controlAggregation": "pages"
+				},{
+					"pattern": "UserAdmin",
+					"name": "UserAdmin",
+					"target": "UserAdmin",
+					"controlAggregation": "pages"
+				}
+			
+			],
+				
+				"targets": {
+					"App": {
+						"viewName": "App"
+					},
+					"Next": {
+						"viewName": "Next"
+					},
+					"UserAdmin": {
+						"viewName": "UserAdmin"
+					}
+				}
+
+		},
+
+
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	}
+}
