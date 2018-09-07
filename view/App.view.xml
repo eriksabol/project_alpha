@@ -18,10 +18,10 @@
 							<Label text="Password:" labelFor="input-password"/>
 							<Input id="input-password" type="Password" placeholder="Password"/>
 							<Label text="Authentication:" labelFor="input-authenticaton"/>
-							<ComboBox items="{/items}">
-								<core:Item key="{key}" text="{text}" />
+							<ComboBox items="{authenticationModel>/items}" selectedKey="secEnterprise" enabled="false" >
+								<core:Item key="{authenticationModel>key}" text="{authenticationModel>text}" />
 							</ComboBox>
-							<Button id="loginButton" type="Emphasized" text="Login" press="onLogin"/>
+							<Button id="loginButton" type="Emphasized" text="Login" press="onPressLogin"/>
 						</l:content>
 					</l:VerticalLayout>
 				</content>
