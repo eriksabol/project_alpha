@@ -36,6 +36,8 @@ sap.ui.define([
            
           MessageToast.show("Login Button pressed.");
 
+          // testing git features
+
         //   var myNextView = new sap.ui.core.mvc.XMLView({
 
         //         viewName: "Project_2.view.Next"
