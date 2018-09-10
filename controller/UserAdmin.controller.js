@@ -19,6 +19,11 @@ sap.ui.define([
 
          }
 
+         var oModel = new sap.ui.model.json.JSONModel("model/user.json");
+         this.getView().setModel(oModel, "userModel");
+
+         console.log(oModel);
+
         },
         
         onBackPress : function () {

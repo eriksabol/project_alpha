@@ -1,18 +1,38 @@
-<mvc:View
-  controllerName="Project_2.controller.UserAdmin"
-  xmlns:l="sap.ui.layout"
-  xmlns:mvc="sap.ui.core.mvc"
-  xmlns:core="sap.ui.core"
-  xmlns:tnt="sap.tnt"
-	xmlns:micro="sap.suite.ui.microchart"
+<mvc:View controllerName="Project_2.controller.UserAdmin" 
+  xmlns:l="sap.ui.layout" 
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:core="sap.ui.core" 
+  xmlns:tnt="sap.tnt" 
+  xmlns:ui="sap.ui.table" 
   xmlns="sap.m" id="userAdminID">
   <App>
-		<pages>
+    <pages>
       <Page title="UserAdmin Page" id="UserAdminID" showHeader="true" showNavButton="true" navButtonPress="onBackPress">
         <content>
-					
-     		</content>
+          <Table id="userListTable" title="test table" items="{userModel>/entries}">
+            <columns>
+              <Column>
+                <Label text="Username" />
+              </Column>
+              <Column>
+                <Label text="CUID" />
+              </Column>
+              <Column>
+                <Label text="ID" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{userModel>title}" />
+                  <Text text="{userModel>cuid}" />
+                  <Text text="{userModel>id}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </content>
       </Page>
     </pages>
-	</App>
+  </App>
 </mvc:View>
