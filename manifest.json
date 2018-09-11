@@ -63,6 +63,7 @@
 					"pattern": "",
 					"name": "Home",
 					"view": "Home",
+					"target": "Home",
 					"controlAggregation": "pages"
 				}, {
 					"pattern": "Next",
@@ -70,7 +71,7 @@
 					"target": "Next",
 					"controlAggregation": "pages"
 				}, {
-					"pattern": "UserAdmin",
+					"pattern": "Next/UserAdmin",
 					"name": "UserAdmin",
 					"target": "UserAdmin",
 					"controlAggregation": "pages"
@@ -81,15 +82,16 @@
 				"targets": {
 					"Home": {
 						"viewName": "Home",
-						"viewLevel": 1
+						"transition": "show",
+						"viewLevel": "0"
 					},
 					"Next": {
 						"viewName": "Next",
-						"viewLevel": 2
+						"viewLevel": "1"
 					},
 					"UserAdmin": {
 						"viewName": "UserAdmin",
-						"viewLevel": 3
+						"viewLevel": "2"
 					}
 				}
 

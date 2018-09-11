@@ -7,42 +7,57 @@ sap.ui.define([
 
     return Controller.extend("Project_2.controller.UserAdmin", {
 
-        onInit : function () {
+        onInit : function() {
           
-          console.log("test");
+          console.log("Start loading onInit in UserAdmin.");
 
-        var liveJSONmodel = new sap.ui.model.json.JSONModel();
+          var liveJSONmodel = new sap.ui.model.json.JSONModel();
 
-         var oModel = new sap.ui.model.json.JSONModel("model/user.json");
-         this.getView().setModel(oModel, "userModel");
+          var oModel = new sap.ui.model.json.JSONModel("model/user.json");
+          this.getView().setModel(oModel, "userModel");
 
-         console.log(oModel);
+          console.log(oModel);
 
+          console.log("Finished loading onInit in UserAdmin.");
+
+        },
+        
+        getRouter : function () {
+          return sap.ui.core.UIComponent.getRouterFor(this);
         },
 
         onBeforeRendering: function() {
 
-          if(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens") === null) {
+        //   if(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens") === null) {
 
-            var oRootRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRootRouter.navTo("Home", true);
+        //     this.getRouter().navTo("Home", {}, true);
 
-         }
+        //  }
           
         },
         
-        onBackPress : function () {
+        onBackPress : function() {
+         
           MessageToast.show("Back Button pressed.");
+
+          console.log(this.getRouter().getRoute());
+
+            console.log(this.getRouter().getTarget());
 
             var oHistory = History.getInstance();
 
             var sPreviousHash = oHistory.getPreviousHash();
+            
+            console.log ("previous history: " + oHistory.getPreviousHash());
 
             if (sPreviousHash !== undefined) {
+              
               window.history.go(-1);
+
             } else {
-              var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-              oRouter.navTo("Next", true);
+              
+              this.getRouter().navTo("Next", {}, true);
+
             }
 
        }

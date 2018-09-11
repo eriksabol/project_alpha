@@ -9,61 +9,35 @@ sap.ui.define([
 
   return Controller.extend("Project_2.controller.Next", {
 
-    onLogoutPress: function () {
-      MessageToast.show("Logout Button pressed.");
+    onInit: function() {
 
-      if (jQuery.sap.storage(jQuery.sap.storage.Type.local).remove("logonToken") !== null) {
-
-        console.log("Logon token successfully removed from Local storage.")
-
-      } else {
-
-        console.log("Logon token could not be removed from local Storage");
-
-      }
-
-      var oHistory = History.getInstance();
-
-      var sPreviousHash = oHistory.getPreviousHash();
-
-      if (sPreviousHash !== undefined) {
-        window.history.go(-1);
-      } else {
-        var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-        oRouter.navTo("App", true);
-      }
+      console.log("Start loading onInit in UserAdmin.");
+      console.log("Finished loading onInit in UserAdmin.");
 
     },
 
+    getRouter : function () {
+			return sap.ui.core.UIComponent.getRouterFor(this);
+		},
+
+    onLogoutPress: function () {
+      
+      MessageToast.show("Logout Button pressed.");
+
+      
+      console.log(this.getRouter().getRoute("Home"));
+     
+      this.getRouter().navTo("Home", {}, true);
+    
+    },
+
     onUserNamePress: function (oEvent) {
-
-      var oPopover = new ResponsivePopover({
-        showHeader: false,
-        placement: sap.m.PlacementType.Bottom,
-        content: [
-          new Button({
-            text: 'Feedback',
-            type: sap.m.ButtonType.Transparent
-          }),
-          new Button({
-            text: 'Help',
-            type: sap.m.ButtonType.Transparent
-          }),
-          new Button({
-            text: 'Logout',
-            type: sap.m.ButtonType.Transparent
-          })
-        ]
-      }).addStyleClass('sapMOTAPopover sapTntToolHeaderPopover');
-
-      oPopover.openBy(oEvent.getSource());
 
     },
 
     onUserAdminPress: function (oEvent) {
 
-      var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-      oRouter.navTo("UserAdmin");
+      this.getRouter().navTo("UserAdmin", {}, false);
 
     }
 

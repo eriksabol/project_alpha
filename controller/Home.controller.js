@@ -9,7 +9,7 @@ sap.ui.define([
 
         onInit: function () {
 
-            console.log("Load");
+            console.log("Start loading onInit in Home");
 
             // 1. ty by sa malo chekcnut ci existuju uz nejake logontokeny v local storage-i. Ak
             // ano, tak sa musia overit ci su aktivne a ak nie tak zmazat.
@@ -46,16 +46,13 @@ sap.ui.define([
 
             this.getView().setModel(oModel, "authenticationModel");
 
-            if(isThereOrphanedToken()) {
-
-                console.log("Your logon tokens are there");
-
-
-            }
-
-            console.log("test");
+            console.log("Finished loading onInit in Home");
 
         },
+
+        getRouter : function () {
+			return sap.ui.core.UIComponent.getRouterFor(this);
+		},
 
         onPressLogin: function () {
 
@@ -69,7 +66,7 @@ sap.ui.define([
                 var passwordInput = this.getView().byId("input-password").getValue();
                 var authenticationInput = this.getView().byId("input-authentication").getSelectedKey();
 
-                console.log(wacsInput + " " + usernameInput + " " + passwordInput + " " + authenticationInput);
+                // console.log(wacsInput + " " + usernameInput + " " + passwordInput + " " + authenticationInput);
 
                 var inputData = {
                     "clienttype": "",
@@ -82,8 +79,7 @@ sap.ui.define([
                 // loginRequest(wacsInput, inputData, processTheOutput);
 
                 // Pocas live testingu toto musi byt zakomentovane
-                var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-                oRouter.navTo("Next");
+                this.getRouter().navTo("Next", {}, true);
             }
 
             else {
@@ -186,8 +182,7 @@ sap.ui.define([
 
             }
 
-            var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRouter.navTo("Next");
+            this.getRouter().navTo("Next", {}, true);
 
             // 1. uloz logonToken na sap local storage
             // 2. naviguj na druhy view/controller kde uz budem vo vnutri (logoff button sa presunie tam).
