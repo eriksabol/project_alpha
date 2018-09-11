@@ -11,19 +11,24 @@ sap.ui.define([
           
           console.log("test");
 
-          if(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonToken") == null) {
-
-            console.log("logontoken undefined");
-            var oRootRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            oRootRouter.navTo("App", true);
-
-         }
+        var liveJSONmodel = new sap.ui.model.json.JSONModel();
 
          var oModel = new sap.ui.model.json.JSONModel("model/user.json");
          this.getView().setModel(oModel, "userModel");
 
          console.log(oModel);
 
+        },
+
+        onBeforeRendering: function() {
+
+          if(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens") === null) {
+
+            var oRootRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            oRootRouter.navTo("Home", true);
+
+         }
+          
         },
         
         onBackPress : function () {

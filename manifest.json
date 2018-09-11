@@ -61,15 +61,15 @@
 
 				"routes": [{
 					"pattern": "",
-					"name": "App",
-					"view": "App",
+					"name": "Home",
+					"view": "Home",
 					"controlAggregation": "pages"
 				}, {
 					"pattern": "Next",
 					"name": "Next",
 					"target": "Next",
 					"controlAggregation": "pages"
-				},{
+				}, {
 					"pattern": "UserAdmin",
 					"name": "UserAdmin",
 					"target": "UserAdmin",
@@ -79,19 +79,21 @@
 			],
 				
 				"targets": {
-					"App": {
-						"viewName": "App"
+					"Home": {
+						"viewName": "Home",
+						"viewLevel": 1
 					},
 					"Next": {
-						"viewName": "Next"
+						"viewName": "Next",
+						"viewLevel": 2
 					},
 					"UserAdmin": {
-						"viewName": "UserAdmin"
+						"viewName": "UserAdmin",
+						"viewLevel": 3
 					}
 				}
 
 		},
-
 
 		"contentDensities": {
 			"compact": true,
