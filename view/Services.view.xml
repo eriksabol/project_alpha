@@ -9,9 +9,11 @@
     <pages>
       <Page title="Services Page" id="ServicesID" showHeader="true" showNavButton="true" navButtonPress="onBackPress">
         <content>
+        <Button id="testButton" type="Emphasized" text="Change Property" press="onPressTest" />
+        <Button id="testChangeButton" type="Emphasized" text="Change Model" press="onPressChangeModel" />
           <Table id="servicesListTable" title="Services" items="{servicesModel>/entries}">
             <columns>
-              <Column width="350px">
+              <Column width="400px">
                 <Label text="Service_Name" />
               </Column>
               <Column>

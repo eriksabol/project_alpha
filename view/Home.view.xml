@@ -5,7 +5,7 @@
   xmlns:core="sap.ui.core"
   xmlns="sap.m"
   id="myHome">
-			<Page title="BI 4.2 REST API - Alfa release" id="myPage">
+			<Page title="BI 4.2 REST API alpha release" id="myPage">
 				<content>
 					<l:VerticalLayout class="sapUiContentPadding" width="100%">
 						<l:content>

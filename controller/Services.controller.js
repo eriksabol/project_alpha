@@ -40,6 +40,24 @@ sap.ui.define([
         //  }
           
         },
+
+        onPressTest: function() {
+
+          var myWorkingModel = this.getView().getModel("servicesModel");
+
+          console.log(myWorkingModel.getProperty("/entries/0/SI_STATUSINFO/0/SI_STATUS"));
+
+          console.log(myWorkingModel.setProperty("/entries/0/SI_STATUSINFO/0/SI_STATUS", getRandomInt(0, 7)));
+
+        },
+
+        onPressChangeModel: function() {
+
+          var myWorkingModel = this.getView().getModel("servicesModel");
+
+          myWorkingModel.loadData("model/servicesTwo.json");
+
+        },
         
         onBackPress : function() {
          
@@ -64,4 +82,13 @@ sap.ui.define([
        }
 
     });
+
+/**
+ * Returns a random integer between min (inclusive) and max (inclusive)
+ * Using Math.round() will give you a non-uniform distribution!
+ */
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
  });
