@@ -1,0 +1,56 @@
+<mvc:View controllerName="Project_2.controller.Services" 
+  xmlns:l="sap.ui.layout" 
+  xmlns:mvc="sap.ui.core.mvc" 
+  xmlns:core="sap.ui.core" 
+  xmlns:tnt="sap.tnt" 
+  xmlns:ui="sap.ui.table" 
+  xmlns="sap.m" id="servicesID">
+  <App>
+    <pages>
+      <Page title="Services Page" id="ServicesID" showHeader="true" showNavButton="true" navButtonPress="onBackPress">
+        <content>
+          <Table id="servicesListTable" title="Services" items="{servicesModel>/entries}">
+            <columns>
+              <Column width="350px">
+                <Label text="Service_Name" />
+              </Column>
+              <Column>
+                <Label text="Heap_size" />
+              </Column>
+              <Column>
+                <Label text="Request_port" />
+              </Column>
+              <Column>
+                <Label text="Service_status" />
+              </Column>
+              <Column>
+                <Label text="Enabled_state" />
+              </Column>
+              <Column>
+                <Label text="Requires_restart" />
+              </Column>
+            </columns>
+            <items>
+              <ColumnListItem>
+                <cells>
+                  <Text text="{servicesModel>SI_NAME}" />
+                  <Text text="{path:'servicesModel>SI_CURRENT_COMMAND_LINE', formatter: '.formatter.myHeapFormatter'}" />
+                  <Text text="{parts: [
+														
+															{path: 'servicesModel>SI_METRICS/0/2/0/SI_METRICS/0/11/0/SI_VALUE'},
+															{path: 'servicesModel>SI_METRICS/0/2/0/SI_METRICS/0/16/0/SI_VALUE'},
+															{path: 'servicesModel>SI_METRICS/0/1/0/SI_METRICS/0/16/0/SI_VALUE'}
+														
+															], formatter: '.formatter.myPortFormatter'}" />
+                  <Text text="{path:'servicesModel>SI_STATUSINFO/0/SI_STATUS', formatter: '.formatter.serverStatus'}" />
+                  <Text text="{path:'servicesModel>SI_DISABLED', formatter: '.formatter.enabledFormatter'}" />
+                  <Text text="{path:'servicesModel>SI_REQUIRES_RESTART', formatter: '.formatter.isFlagged'}" />
+                </cells>
+              </ColumnListItem>
+            </items>
+          </Table>
+        </content>
+      </Page>
+    </pages>
+  </App>
+</mvc:View>

@@ -35,9 +35,36 @@ sap.ui.define([
 
     },
 
+    onFRSpress: function() {
+
+      var textString = "\/usr\/sap\/RO2\/sap_bobj\/enterprise_xi40\/linux_x64\/\/boe_filesd -loggingPath -Xmx2g \/usr\/sap\/RO2\/sap_bobj\/logging\/ -requestport 6402 -fg -restart -name Input.frhdstdrqrv20 -pidfile \/usr\/sap\/RO2\/sap_bobj\/serverpids\/frhdstdrqrv20_frhdstdrqrv20.InputFileRepository.pid -ns dcplnx23099339:6400";
+
+      var re = /Xmx[0-9]{1,4}./;
+
+			var sPortValue = re.exec(textString);
+
+			if (sPortValue) {
+
+				console.log(sPortValue);
+
+			} else {
+
+				console.log("-");
+			}
+
+    },
+
     onUserAdminPress: function (oEvent) {
 
       this.getRouter().navTo("UserAdmin", {}, false);
+
+    },
+
+    onServicesPress: function() {
+
+      MessageToast.show("Services Button pressed.");
+
+      this.getRouter().navTo("Services", {}, false);
 
     }
 

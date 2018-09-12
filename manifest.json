@@ -75,6 +75,12 @@
 					"name": "UserAdmin",
 					"target": "UserAdmin",
 					"controlAggregation": "pages"
+				},
+				{
+					"pattern": "Next/Services",
+					"name": "Services",
+					"target": "Services",
+					"controlAggregation": "pages"
 				}
 			
 			],
@@ -82,7 +88,6 @@
 				"targets": {
 					"Home": {
 						"viewName": "Home",
-						"transition": "show",
 						"viewLevel": "0"
 					},
 					"Next": {
@@ -92,7 +97,12 @@
 					"UserAdmin": {
 						"viewName": "UserAdmin",
 						"viewLevel": "2"
+					},
+					"Services": {
+						"viewName": "Services",
+						"viewLevel": "2"
 					}
+
 				}
 
 		},
