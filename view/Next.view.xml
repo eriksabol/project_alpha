@@ -24,12 +24,13 @@
 							</layoutData>
 						</Text>
 						<ToolbarSpacer />
-						<Button text="Logout" type="Transparent" press="onLogoutPress">
+						<Button text="Logoff" type="Transparent" press="onLogoffPress">
 							<layoutData>
 								<OverflowToolbarLayoutData priority="NeverOverflow" />
 							</layoutData>
 						</Button>
 					</tnt:ToolHeader>
+					
 					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Services" subheader="Total" press="onServicesPress">
 						<TileContent unit="Unit" footer="Running">
 							<NumericContent value="24" icon="sap-icon://line-charts" />
@@ -50,6 +51,7 @@
 							<NumericContent value="368" icon="sap-icon://key-user-settings" />
 						</TileContent>
 					</GenericTile>
+					<Button id="tokenButton" type="Emphasized" text="Show Token" press="onPressToken" />
 				</content>
 			</Page>
 		</pages>

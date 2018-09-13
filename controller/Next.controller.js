@@ -18,16 +18,63 @@ sap.ui.define([
 
     getRouter : function () {
 			return sap.ui.core.UIComponent.getRouterFor(this);
-		},
+    },
+    
+    onPressToken: function() {
 
-    onLogoutPress: function () {
-      
-      MessageToast.show("Logout Button pressed.");
+      var myToken = sap.ui.getCore().getModel("tokenModel");
 
+      sap.m.MessageBox.information(JSON.stringify(myToken.getProperty("/logonToken")));
+
+
+    },
+
+    onLogoffPress: function () {
       
-      console.log(this.getRouter().getRoute("Home"));
-     
-      this.getRouter().navTo("Home", {}, true);
+      // TODO - only helper variable - needs to be fixed by passing it
+      var wacsURL = "http://localhost:6405/biprws";
+
+        $.ajax({
+          url: wacsURL + "/v1/logoff",
+          method: "POST",
+          dataType: "json",
+          headers: {
+            "X-SAP-LogonToken": String(sap.ui.getCore().getModel("tokenModel").getProperty("/logonToken")),
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+          },
+          complete: function (jqXHRobject, textStatus) {
+    
+            if(jqXHRobject.status == 200) {
+
+              console.log("Logged off");
+              console.log(jqXHRobject);
+
+              // TODO - 1) Odstranit logonToken z modelu
+              // TODO - 2) Pohrat sa trochu s repsonsami - error/success lebo nejako to nefacha
+
+              //this.getRouter().navTo("Home", {}, true);
+
+              // Positioned after navTo so that user can see the MessgeToast after navigating away.
+              MessageToast.show("Your were logged off from BI4 environment.");
+
+            }
+
+            else {
+
+              console.log("Apparently not logged off!");
+              console.log(jqXHRobject);
+              console.log(textStatus);
+
+
+            }
+
+          }
+    
+        });
+
+        // ! Has to be commented when testing online
+        // this.getRouter().navTo("Home", {}, true);
     
     },
 
@@ -37,20 +84,7 @@ sap.ui.define([
 
     onFRSpress: function() {
 
-      var textString = "\/usr\/sap\/RO2\/sap_bobj\/enterprise_xi40\/linux_x64\/\/boe_filesd -loggingPath -Xmx2g \/usr\/sap\/RO2\/sap_bobj\/logging\/ -requestport 6402 -fg -restart -name Input.frhdstdrqrv20 -pidfile \/usr\/sap\/RO2\/sap_bobj\/serverpids\/frhdstdrqrv20_frhdstdrqrv20.InputFileRepository.pid -ns dcplnx23099339:6400";
-
-      var re = /Xmx[0-9]{1,4}./;
-
-			var sPortValue = re.exec(textString);
-
-			if (sPortValue) {
-
-				console.log(sPortValue);
-
-			} else {
-
-				console.log("-");
-			}
+      MessageToast.show("FRS Button pressed.");
 
     },
 
@@ -74,27 +108,7 @@ sap.ui.define([
   // Code needs rework
   function logoffRequest(wacsURL, token) {
 
-    $.ajax({
-      url: wacsURL + "/logoff",
-      method: "POST",
-      dataType: "json",
-      headers: {
-        "X-SAP-LogonToken": String(token)
-      },
-      success: function (data, textStatus, jqXHRobject) {
 
-        
-
-
-      },
-
-      error: function(jqXHRobject, textStatus, errorThrown) {
-
-
-
-      }
-
-    });
 
   }
 

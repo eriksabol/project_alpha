@@ -5,6 +5,8 @@ sap.ui.define([
 ], function (Controller, MessageToast, MessageBox) {
     "use strict";
 
+    var that;
+
     return Controller.extend("Project_2.controller.Home", {
 
         onInit: function () {
@@ -15,6 +17,9 @@ sap.ui.define([
             // ano, tak sa musia overit ci su aktivne a ak nie tak zmazat.
 
             var oModel = new sap.ui.model.json.JSONModel();
+            var tokenModel = new sap.ui.model.json.JSONModel();
+
+            that = this;
 
             oModel.setData({
 
@@ -45,6 +50,7 @@ sap.ui.define([
             });
 
             this.getView().setModel(oModel, "authenticationModel");
+            sap.ui.getCore().setModel(tokenModel, "tokenModel");
 
             console.log("Finished loading onInit in Home");
 
@@ -55,12 +61,7 @@ sap.ui.define([
 		},
 
         onPressLogin: function () {
-
-            MessageToast.show("Login Button pressed.");
-
-            // ! added for logontoken verification
-            if(!isThereOrphanedToken()) {
-
+          
                 var wacsInput = this.getView().byId("input-wacs").getValue();
                 var usernameInput = this.getView().byId("input-username").getValue();
                 var passwordInput = this.getView().byId("input-password").getValue();
@@ -75,24 +76,24 @@ sap.ui.define([
                     "auth": authenticationInput
                 };
 
-                // Pocas testingu bez BI4 toto musi byt zakommentovane 
-                // loginRequest(wacsInput, inputData, processTheOutput);
+                // ! Pocas testingu bez BI4 toto musi byt zakommentovane 
+                loginRequest(wacsInput, inputData, processTheOutput);
 
-                // Pocas live testingu toto musi byt zakomentovane
-                this.getRouter().navTo("Next", {}, true);
-            }
+                // ! Pocas live testingu toto musi byt zakomentovane
+                 // this.loginRequestTest(wacsInput, inputData);
+                // this.getRouter().navTo("Next", {}, true);
+            
 
-            else {
+        },
 
-                var logonToken = JSON.parse(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens"));
+        loginRequestTest: function(URL, inputObject) {
 
-                console.log(logonToken);
+            console.log(URL + inputObject);
+            this.getRouter();
+            test();
 
-                sap.m.MessageBox.error("Your logon tokens are: " + JSON.stringify(logonToken));
-            }
+        }  
 
-
-        }
     });
 
     function loginRequest(URL, inputObject, callbackFunction) {
@@ -139,123 +140,51 @@ sap.ui.define([
 
         console.log(result);
 
-        // jQuery.sap.require("jquery.sap.storage");
-        // var oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
-
-        // console.log("oStorage: " + oStorage);
-
-        // console.log(oStorage.isSupported());
-
-        // var mockLogonToken = "dcplnx23099339:6400@{3&2=507714,U3&2v=dcplnx23099339:6400,UP&66=60,U3&68=secEnterprise:Administrator,UP&S9=12,U3&qe=100,U3&vz=erjMxF8o2a9vxFPOxnl.qIvOB.yeJW8wHh9JAOUwts0,UP}";
-
-        // console.log(oStorage.put("logonToken_dcplnx23099339:6400", mockLogonToken));
-
-
-
         // Check returned object and process further
 
         if (typeof result.responseJSON === "undefined") {
 
-            //sap.m.MessageToast.show("No JSON response detected. Please check if you have connectivity to REST services.");
-
             sap.m.MessageBox.error("No JSON response detected. Please check if you have connectivity to WACS server.");
-            // na message box mozeme dat este callback aby vycistil fieldy ked user
-            // klikne na zavriet.
 
-        } else if (result.responseJSON.error_code !== null) {
+        } else if (result.responseJSON.error_code !== null && result.statusText !== "OK") {
 
-            //sap.m.MessageToast.show(result.responseJSON.error_code + " " + result.responseJSON.message);
-
-            sap.m.MessageBox.error(result.responseJSON.message, {
+             sap.m.MessageBox.error(result.responseJSON.message, {
                 title: result.status + " " + result.statusText
             });
 
         } else {
 
-            if (jQuery.sap.storage(jQuery.sap.storage.Type.local).put("logonToken", "teststring")) {
+            // Saving logon token to Core globally as JSONModel
+            sap.ui.getCore().getModel("tokenModel").setJSON(JSON.stringify(result.responseJSON));
 
-                console.log("Logon token savend to Local storage.")
+            // Navigating to dashboard view after successfull login
+            that.getRouter().navTo("Next", {}, true);
 
-            } else {
-
-                console.log("Logon token could not be saved to local Storage");
-
-            }
-
-            this.getRouter().navTo("Next", {}, true);
-
-            // 1. uloz logonToken na sap local storage
-            // 2. naviguj na druhy view/controller kde uz budem vo vnutri (logoff button sa presunie tam).
-            // testujem git
+            MessageToast.show("You were logged in to BI4 environment.");
 
         }
 
     }
 
-    function isThereOrphanedToken() {
+    function test() {
 
-        var localStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
+        console.log("This is a test outside function.")
 
-        if(localStorage.get("logonTokens") !== null) {
+        console.log("Has model? " + sap.ui.getCore().hasModel());
+        console.log("This is the model: " + sap.ui.getCore().getModel("tokenModel"));
 
-            return true;
+        var coreModel = sap.ui.getCore().getModel("tokenModel");
 
-        }
+        coreModel.loadData("model/logonToken.json");
 
-        else {
+        console.log("This is the model: " + coreModel);
 
-            return false;
+        console.log(coreModel);
 
-        }
-        
-        
-        
-        
-        
-        
-        
-        // if (localStorage.isSupported()) {
+        console.log(that.getRouter());
 
-        //     if(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens") !== null) {
 
-        //         var logonToken = JSON.parse(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens"));
 
-        //         console.log(logonToken);
-
-        //         sap.m.MessageBox.warning("Your local storage contains the following logon tokens" + logonToken, {title: "Warning", actions: sap.m.MessageBox.Action.YES,
-            
-        //             onClose: function(oAction) {
-
-        //                 console.log(oAction);
-
-        //                 if(oAction === sap.m.MessageBox.Action.YES) {
-
-        //                     alert("yes");
-
-        //                 }
-
-        //             }
-                                   
-        //     });
-
-        //     }
-
-        //     // Pride kod, ktory checkne ci tam uz je nejaky logon token a zobrazi hlasku, ci chce vsetky tokeny zmazat.
-        //     // Zmazanie bude asi JSON request na logoff, ak sa vrati error tak to zmaze. Ak sa vrati uspesne prihlasenie, tak
-        //     // tu session odhlasi.
-
-        // } else {
-
-        //     sap.m.MessageBox.error("Your browse does not support local storage functionality. You are not able to use this application.");
-
-        //     this.getView().byId("input-wacs").setEnabled(false);
-        //     this.getView().byId("input-username").setEnabled(false);
-        //     this.getView().byId("input-password").setEnabled(false);
-
-        //     // Is already disabled in view:
-        //     //this.getView().byId("input-authentication").setEnabled(false);
-
-        // }
 
     }
 

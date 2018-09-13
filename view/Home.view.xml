@@ -10,7 +10,7 @@
 					<l:VerticalLayout class="sapUiContentPadding" width="100%">
 						<l:content>
 							<!-- <Label text="WACS URL:" labelFor="input-wacs"/> -->
-							<Input id="input-wacs" required="true" placeholder="http://localhost:6405/biprws"/>
+							<Input id="input-wacs" required="true" placeholder="http://localhost:6405/biprws" value="http://localhost:6405/biprws" />
 							<!-- <Label text="Username:" labelFor="input-username" value="Administrator" /> -->
 							<Input id="input-username" placeholder="Username"/>
 							<!-- <Label text="Password:" labelFor="input-password"/> -->

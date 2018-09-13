@@ -1,0 +1,88 @@
+
+        // jQuery.sap.require("jquery.sap.storage");
+        // var oStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
+
+        // console.log("oStorage: " + oStorage);
+
+        // console.log(oStorage.isSupported());
+
+        // var mockLogonToken = "dcplnx23099339:6400@{3&2=507714,U3&2v=dcplnx23099339:6400,UP&66=60,U3&68=secEnterprise:Administrator,UP&S9=12,U3&qe=100,U3&vz=erjMxF8o2a9vxFPOxnl.qIvOB.yeJW8wHh9JAOUwts0,UP}";
+
+        // console.log(oStorage.put("logonToken_dcplnx23099339:6400", mockLogonToken));
+
+
+
+                    if (jQuery.sap.storage(jQuery.sap.storage.Type.local).put("logonToken", "teststring")) {
+
+                console.log("Logon token savend to Local storage.")
+
+            } else {
+
+                console.log("Logon token could not be saved to local Storage");
+
+            }
+
+
+
+
+
+                function isThereOrphanedToken() {
+
+        var localStorage = jQuery.sap.storage(jQuery.sap.storage.Type.local);
+
+        if(localStorage.get("logonTokens") !== null) {
+
+            return true;
+
+        }
+
+        else {
+
+            return false;
+
+        }
+
+
+
+        // if (localStorage.isSupported()) {
+
+        //     if(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens") !== null) {
+
+        //         var logonToken = JSON.parse(jQuery.sap.storage(jQuery.sap.storage.Type.local).get("logonTokens"));
+
+        //         console.log(logonToken);
+
+        //         sap.m.MessageBox.warning("Your local storage contains the following logon tokens" + logonToken, {title: "Warning", actions: sap.m.MessageBox.Action.YES,
+            
+        //             onClose: function(oAction) {
+
+        //                 console.log(oAction);
+
+        //                 if(oAction === sap.m.MessageBox.Action.YES) {
+
+        //                     alert("yes");
+
+        //                 }
+
+        //             }
+                                   
+        //     });
+
+        //     }
+
+        //     // Pride kod, ktory checkne ci tam uz je nejaky logon token a zobrazi hlasku, ci chce vsetky tokeny zmazat.
+        //     // Zmazanie bude asi JSON request na logoff, ak sa vrati error tak to zmaze. Ak sa vrati uspesne prihlasenie, tak
+        //     // tu session odhlasi.
+
+        // } else {
+
+        //     sap.m.MessageBox.error("Your browse does not support local storage functionality. You are not able to use this application.");
+
+        //     this.getView().byId("input-wacs").setEnabled(false);
+        //     this.getView().byId("input-username").setEnabled(false);
+        //     this.getView().byId("input-password").setEnabled(false);
+
+        //     // Is already disabled in view:
+        //     //this.getView().byId("input-authentication").setEnabled(false);
+
+        // }
