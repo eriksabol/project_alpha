@@ -142,25 +142,39 @@ sap.ui.define([
 
         // Check returned object and process further
 
-        if (typeof result.responseJSON === "undefined") {
+        // TODO rework loop for checking the output into case statement?
 
-            sap.m.MessageBox.error("No JSON response detected. Please check if you have connectivity to WACS server.");
+        if(result.status === 0){
 
-        } else if (result.responseJSON.error_code !== null && result.statusText !== "OK") {
+            sap.m.MessageBox.error("Communication error (status: 0). Please check if you have connectivity to WACS server.");
 
-             sap.m.MessageBox.error(result.responseJSON.message, {
+        }
+
+        else if(result.status === 200 && typeof result.responseJSON !== "undefined") {
+
+                // Saving logon token to Core globally as JSONModel
+                sap.ui.getCore().getModel("tokenModel").setJSON(JSON.stringify(result.responseJSON));
+
+                // Navigating to dashboard view after successfull login
+                that.getRouter().navTo("Next", {}, true);
+            
+                MessageToast.show("You were logged on to BI4 environment.");
+
+        }
+
+        else if(result.status !== 200 && typeof result.responseJSON !== "undefined" && result.responseText !== "{}"){
+
+            sap.m.MessageBox.error(result.responseJSON.message, {
                 title: result.status + " " + result.statusText
             });
 
-        } else {
+        }
 
-            // Saving logon token to Core globally as JSONModel
-            sap.ui.getCore().getModel("tokenModel").setJSON(JSON.stringify(result.responseJSON));
+        else {
 
-            // Navigating to dashboard view after successfull login
-            that.getRouter().navTo("Next", {}, true);
-
-            MessageToast.show("You were logged in to BI4 environment.");
+            sap.m.MessageBox.error(result.statusText, {
+                title: result.status
+            });
 
         }
 
@@ -183,7 +197,7 @@ sap.ui.define([
 
         console.log(that.getRouter());
 
-
+        const myRequest = new Request('http://localhost:6405/biprws/logon/long');
 
 
     }

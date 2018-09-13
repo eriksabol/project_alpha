@@ -9,18 +9,18 @@ sap.ui.define([
 
   return Controller.extend("Project_2.controller.Next", {
 
-    onInit: function() {
+    onInit: function () {
 
       console.log("Start loading onInit in UserAdmin.");
       console.log("Finished loading onInit in UserAdmin.");
 
     },
 
-    getRouter : function () {
-			return sap.ui.core.UIComponent.getRouterFor(this);
+    getRouter: function () {
+      return sap.ui.core.UIComponent.getRouterFor(this);
     },
-    
-    onPressToken: function() {
+
+    onPressToken: function () {
 
       var myToken = sap.ui.getCore().getModel("tokenModel");
 
@@ -30,59 +30,87 @@ sap.ui.define([
     },
 
     onLogoffPress: function () {
-      
+
       // TODO - only helper variable - needs to be fixed by passing it
-      var wacsURL = "http://localhost:6405/biprws";
+      // var wacsURL = "http://localhost:6405/biprws";
+      var wacsURL = "www.sme.sk";
 
-        $.ajax({
-          url: wacsURL + "/v1/logoff",
-          method: "POST",
-          dataType: "json",
-          headers: {
-            "X-SAP-LogonToken": String(sap.ui.getCore().getModel("tokenModel").getProperty("/logonToken")),
-            "Accept": "application/json",
-            "Content-Type": "application/json"
-          },
-          complete: function (jqXHRobject, textStatus) {
-    
-            if(jqXHRobject.status == 200) {
+      $.ajax({
+        url: wacsURL + "/v1/logoff",
+        method: "POST",
+        dataType: "json",
+        headers: {
+          "X-SAP-LogonToken": String(sap.ui.getCore().getModel("tokenModel").getProperty("/logonToken")),
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        complete: function (jqXHRobject, textStatus) {
 
-              console.log("Logged off");
-              console.log(jqXHRobject);
+          if (jqXHRobject.status === 0) {
 
-              // TODO - 1) Odstranit logonToken z modelu
-              // TODO - 2) Pohrat sa trochu s repsonsami - error/success lebo nejako to nefacha
+            sap.m.MessageBox.error("Please make sure that you have connectivity to WACS and try to logoff again.", {title: "Communication error (status: 0)" });
 
-              //this.getRouter().navTo("Home", {}, true);
+          } else if (jqXHRobject.status == 200) {
 
-              // Positioned after navTo so that user can see the MessgeToast after navigating away.
-              MessageToast.show("Your were logged off from BI4 environment.");
+            console.log("Logged off");
+            console.log(jqXHRobject);
 
-            }
+            // TODO - Odstranit logonToken z modelu
+            sap.ui.getCore().getModel("tokenModel").destroy();
 
-            else {
+            // TODO - a presmerovat na Home
+            //this.getRouter().navTo("Home", {}, true);
 
-              console.log("Apparently not logged off!");
-              console.log(jqXHRobject);
-              console.log(textStatus);
+            // MessageToast positioned after navTo so that user can see it also after navigating away.
+            // TODO rework so that also username is visible after logoff
+            MessageToast.show("Username has logged off from BI4 environment.");
 
+          } 
+          
+          // User je prihlasny cez API, ale medzitym mu niekto kill-ne session na BI4 environmente (kill, restart SIA/WACS, atd.)
+          // TODO at this point it is also needed to get rid of logon token and redirect to Home page
+          else if(jqXHRobject.status === 401) {
 
-            }
+            
+
+            
+            // TODO - na tejto hlaske nemoze dat user escape - musim stlacit a po stlaceni musi byt listener, ktory ma hodi na Home
+            // TODO a vymaze referenciu na logonToken
+
+            sap.m.MessageBox.error("User session with your token has either expired or has been logged off from BI4. Please logon again.",  {title: "Not a valid logon token"} );
+
+            sap.ui.getCore().getModel("tokenModel").destroy();
+            //this.getRouter().navTo("Home", {}, true);
 
           }
-    
-        });
 
-        // ! Has to be commented when testing online
-        // this.getRouter().navTo("Home", {}, true);
-    
+          else {
+
+            // Can't think of any else cases but it is here for completeness
+            sap.m.MessageBox.error(jqXHRobject.statusText, {
+              title: jqXHRobject.status
+            });
+
+            console.log("Apparently not logged off!");
+            console.log(jqXHRobject);
+            console.log(textStatus);
+
+          }
+
+        }
+
+      });
+
+      // ! Has to be commented when testing online
+      // this.getRouter().navTo("Home", {}, true);
+
     },
 
     onUserNamePress: function (oEvent) {
 
     },
 
-    onFRSpress: function() {
+    onFRSpress: function () {
 
       MessageToast.show("FRS Button pressed.");
 
@@ -94,7 +122,7 @@ sap.ui.define([
 
     },
 
-    onServicesPress: function() {
+    onServicesPress: function () {
 
       MessageToast.show("Services Button pressed.");
 

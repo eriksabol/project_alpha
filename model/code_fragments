@@ -86,3 +86,10 @@
         //     //this.getView().byId("input-authentication").setEnabled(false);
 
         // }
+
+
+var myJSON={"logonToken": "dcplnx23099339:6400@{3&2=508365,U3&2v=dcplnx23099339:6400,UP&66=60,U3&68=secEnterprise:Administrator,UP&S9=12,U3&qe=100,U3&vz=MXgVOkJ1lYL.Drlg79gXdneX6z.I2SQ81J695w7IDTE,UP}"
+}
+var tokenModel = new sap.ui.model.json.JSONModel();
+sap.ui.getCore().setModel(tokenModel, "tokenModel");
+sap.ui.getCore().getModel("tokenModel").setJSON(JSON.stringify(myJSON));
