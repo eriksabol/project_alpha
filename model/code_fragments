@@ -93,3 +93,7 @@ var myJSON={"logonToken": "dcplnx23099339:6400@{3&2=508365,U3&2v=dcplnx23099339:
 var tokenModel = new sap.ui.model.json.JSONModel();
 sap.ui.getCore().setModel(tokenModel, "tokenModel");
 sap.ui.getCore().getModel("tokenModel").setJSON(JSON.stringify(myJSON));
+
+{
+	"query": "select SI_NAME, SI_ID, SI_CUID, SI_PID, SI_DISABLED, SI_SIA_HOSTNAME, SI_AUTOBOOT, SI_STATUSINFO, SI_REQUIRES_RESTART, SI_CURRENT_COMMAND_LINE, SI_METRICS, SI_EXPECTED_RUN_STATE, SI_SERVER_WAITING_FOR_RESOURCES from ci_systemobjects where si_kind='Server'"
+}

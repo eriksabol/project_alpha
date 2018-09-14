@@ -11,6 +11,7 @@
         <content>
         <Button id="testButton" type="Emphasized" text="Change Property" press="onPressTest" />
         <Button id="testChangeButton" type="Emphasized" text="Change Model" press="onPressChangeModel" />
+        <Button id="testLoadButton" type="Emphasized" text="Load Data" press="onPressLoadModel" />
           <Table id="servicesListTable" title="Services" items="{servicesModel>/entries}">
             <columns>
               <Column width="400px">

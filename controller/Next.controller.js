@@ -7,12 +7,16 @@ sap.ui.define([
 ], function (Controller, MessageToast, History, ResponsivePopover, Button) {
   "use strict";
 
+  var that;
+
   return Controller.extend("Project_2.controller.Next", {
 
     onInit: function () {
 
       console.log("Start loading onInit in UserAdmin.");
       console.log("Finished loading onInit in UserAdmin.");
+
+      that=this;
 
     },
 
@@ -32,11 +36,11 @@ sap.ui.define([
     onLogoffPress: function () {
 
       // TODO - only helper variable - needs to be fixed by passing it
-      // var wacsURL = "http://localhost:6405/biprws";
-      var wacsURL = "www.sme.sk";
+      var wacsURL = "http://localhost:6405/biprws";
+      // var wacsURL = "www.sme.sk";
 
       $.ajax({
-        url: wacsURL + "/v1/logoff",
+        url: wacsURL + "/logoff",
         method: "POST",
         dataType: "json",
         headers: {
@@ -49,6 +53,7 @@ sap.ui.define([
           if (jqXHRobject.status === 0) {
 
             sap.m.MessageBox.error("Please make sure that you have connectivity to WACS and try to logoff again.", {title: "Communication error (status: 0)" });
+            console.log(jqXHRobject);
 
           } else if (jqXHRobject.status == 200) {
 
@@ -59,7 +64,7 @@ sap.ui.define([
             sap.ui.getCore().getModel("tokenModel").destroy();
 
             // TODO - a presmerovat na Home
-            //this.getRouter().navTo("Home", {}, true);
+            that.getRouter().navTo("Home", {}, true);
 
             // MessageToast positioned after navTo so that user can see it also after navigating away.
             // TODO rework so that also username is visible after logoff
@@ -78,9 +83,8 @@ sap.ui.define([
             // TODO a vymaze referenciu na logonToken
 
             sap.m.MessageBox.error("User session with your token has either expired or has been logged off from BI4. Please logon again.",  {title: "Not a valid logon token"} );
-
             sap.ui.getCore().getModel("tokenModel").destroy();
-            //this.getRouter().navTo("Home", {}, true);
+            this.getRouter().navTo("Home", {}, true);
 
           }
 
@@ -131,13 +135,5 @@ sap.ui.define([
     }
 
   });
-
-
-  // Code needs rework
-  function logoffRequest(wacsURL, token) {
-
-
-
-  }
 
 });
