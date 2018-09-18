@@ -1,161 +1,1681 @@
 {
-    "__metadata":{
-        "uri":"http://devcenter:6405/biprws/users?page=1&pageSize=50"
+    "__metadata": {
+        "uri": "http:\/\/localhost:6405\/biprws\/v1\/cmsquery?page=1&pagesize=50"
     },
-    "first":{
-        "__deferred":{
-            "uri":"http://devcenter:6405/biprws/users?page=1&pageSize=50"
+    "first": {
+        "__deferred": {
+            "uri": "http:\/\/localhost:6405\/biprws\/v1\/cmsquery?page=1&pagesize=50"
         }
     },
-    "last":{
-        "__deferred":{
-            "uri":"http://devcenter:6405/biprws/users?page=1&pageSize=50"
+    "next": {
+        "__deferred": {
+            "uri": "http:\/\/localhost:6405\/biprws\/v1\/cmsquery?page=2&pagesize=50"
         }
     },
-    "entries":[
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/11"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmI",
-            "description":"Guest account",
-            "fullName":"",
-            "id":11,
-            "title":"Guest",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmA",
-            "description":"Test account",
-            "fullName":"",
-            "id":12,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmS",
-            "description":"Test account",
-            "fullName":"",
-            "id":13,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmD",
-            "description":"Test account",
-            "fullName":"",
-            "id":14,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmF",
-            "description":"Test account",
-            "fullName":"",
-            "id":15,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmG",
-            "description":"Test account",
-            "fullName":"",
-            "id":16,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmH",
-            "description":"Test account",
-            "fullName":"",
-            "id":17,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmJ",
-            "description":"Test account",
-            "fullName":"",
-            "id":18,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmK",
-            "description":"Test account",
-            "fullName":"",
-            "id":19,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmL",
-            "description":"Test account",
-            "fullName":"",
-            "id":20,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmZ",
-            "description":"Test account",
-            "fullName":"",
-            "id":21,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
-        },
-        {
-            "__metadata":{
-                "uri":"http://devcenter:6405/biprws/users/12"
-            },
-            "cuid":"AcgOFGfhCzJEg.VjnPaidmx",
-            "description":"Test account",
-            "fullName":"",
-            "id":22,
-            "title":"Test",
-            "type":"User",
-            "tenant":"19"
+    "last": {
+        "__deferred": {
+            "uri": "http:\/\/localhost:6405\/biprws\/v1\/cmsquery?page=2&pagesize=50"
         }
-    ]
+    },
+    "entries": [{
+        "SI_ID": 11,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 719
+        }],
+        "SI_NAME": "Guest",
+        "SI_DEFAULT_OBJECT": true,
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 721
+        }],
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 720
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#11",
+                "SI_NAME": "secEnterprise:Guest",
+                "SI_DISABLED": true
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CUID": "AcgOFGfhCzJEg.VjnPaidmI",
+        "SI_CREATION_TIME": "Fri Jun 07 13:08:03 GMT+01:00 2013",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 12,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 725
+        }],
+        "SI_NAME": "Administrator",
+        "SI_DEFAULT_OBJECT": true,
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 727
+        }],
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 726
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#12",
+                "SI_NAME": "secEnterprise:Administrator",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 2,
+            "3": 3
+        }],
+        "SI_LASTLOGONTIME": "Tue Sep 18 08:51:59 GMT+01:00 2018",
+        "SI_CUID": "AfRWaT5_131NlLLf5bRMLKY",
+        "SI_CREATION_TIME": "Fri Jun 07 13:08:03 GMT+01:00 2013",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 473,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 722
+        }],
+        "SI_NAME": "SMAdmin",
+        "SI_DEFAULT_OBJECT": true,
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 724
+        }],
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 723
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#473",
+                "SI_NAME": "secEnterprise:SMAdmin",
+                "SI_DISABLED": true
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CUID": "AYOND92OTmRDiSOfmHNmLy4",
+        "SI_CREATION_TIME": "Fri Jun 07 13:08:03 GMT+01:00 2013",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 2936,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 2937
+        }],
+        "SI_NAME": "QaaWSServletPrincipal",
+        "SI_DEFAULT_OBJECT": true,
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 2939
+        }],
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 2938
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#2936",
+                "SI_NAME": "secEnterprise:QaaWSServletPrincipal",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CUID": "AZXxgvnSAIFNpj9oy1vbgRA",
+        "SI_CREATION_TIME": "Fri Jun 07 13:16:06 GMT+01:00 2013",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 34936,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 34937
+        }],
+        "SI_NAME": "L0308086",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 34939
+        }],
+        "SI_CUID": "FqUZWVPqfAMAYQkAAADX3wMAAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 34938
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#34936",
+                "SI_NAME": "secEnterprise:L0308086",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Thu Apr 24 15:03:34 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 38127,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 38128
+        }],
+        "SI_NAME": "LCM",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 38130
+        }],
+        "SI_CUID": "FveAsVMfUwUAJRIAAABHKtkAAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 38129
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#38127",
+                "SI_NAME": "secEnterprise:LCM",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Mon Jun 30 16:23:50 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39096,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39097
+        }],
+        "SI_NAME": "TEST1",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39099
+        }],
+        "SI_CUID": "Fugxz1NebQcAAjQAAAAX_jwAAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39098
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39096",
+                "SI_NAME": "secEnterprise:TEST1",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 04:57:06 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39100,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39101
+        }],
+        "SI_NAME": "TEST2",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39103
+        }],
+        "SI_CUID": "Fpwyz1Nrbw4AAjQAAABXOTwAAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39102
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39100",
+                "SI_NAME": "secEnterprise:TEST2",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 04:58:33 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39104,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39105
+        }],
+        "SI_NAME": "TEST3",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39107
+        }],
+        "SI_CUID": "Fu4yz1M1yQEAAjQAAAD32z4AAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39106
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39104",
+                "SI_NAME": "secEnterprise:TEST3",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 04:59:10 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39108,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39109
+        }],
+        "SI_NAME": "TEST4",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39111
+        }],
+        "SI_CUID": "FiAzz1PWtgUAAjQAAADXuz4AAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39110
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39108",
+                "SI_NAME": "secEnterprise:TEST4",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 04:59:51 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39112,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39113
+        }],
+        "SI_NAME": "TEST5",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39115
+        }],
+        "SI_CUID": "Fjszz1NmuAYAAjQAAACXeTwAAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39114
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39112",
+                "SI_NAME": "secEnterprise:TEST5",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 05:00:20 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39116,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39117
+        }],
+        "SI_NAME": "TEST6",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39119
+        }],
+        "SI_CUID": "FmIzz1P2mwcAAjQAAAAnCz4AAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39118
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39116",
+                "SI_NAME": "secEnterprise:TEST6",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 05:01:00 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39120,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39121
+        }],
+        "SI_NAME": "TEST7",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39123
+        }],
+        "SI_CUID": "Fn8zz1NKNg4AAjQAAABHKz4AAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39122
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39120",
+                "SI_NAME": "secEnterprise:TEST7",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 05:01:25 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39124,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39125
+        }],
+        "SI_NAME": "TEST8",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39127
+        }],
+        "SI_CUID": "FqIzz1P2eAYAAjQAAAC3mz4AAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39126
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39124",
+                "SI_NAME": "secEnterprise:TEST8",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 05:02:12 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39128,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39129
+        }],
+        "SI_NAME": "L0441094",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39131
+        }],
+        "SI_CUID": "Fskzz1P2vQoAAjQAAADHqj0AAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39130
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39128",
+                "SI_NAME": "secEnterprise:L0441094",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 05:02:57 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39132,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39133
+        }],
+        "SI_NAME": "L0433593",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39135
+        }],
+        "SI_CUID": "Fv0zz1ORjQkAAjQAAAD32TwAAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39134
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39132",
+                "SI_NAME": "secEnterprise:L0433593",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Wed Jul 23 05:03:40 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 39698,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 39699
+        }],
+        "SI_NAME": "L0442712",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 39701
+        }],
+        "SI_CUID": "Foxw31NczA4A1n0AAADHfD0AAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 39700
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secEnterprise:#39698",
+                "SI_NAME": "secEnterprise:L0442712",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": false,
+        "SI_CHANGEPASSWORD": true,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 2
+        }],
+        "SI_CREATION_TIME": "Mon Aug 04 12:38:23 GMT+01:00 2014",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 294966,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295117
+        }],
+        "SI_NAME": "RB1~100\/CRYSTAL",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295119
+        }],
+        "SI_CUID": "Fp70xFli3g4ArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295118
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/CRYSTAL",
+                "SI_NAME": "secSAPR3:RB1~100\/CRYSTAL",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:45 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 294967,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295081
+        }],
+        "SI_NAME": "RB1~100\/EEM_USER1",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295083
+        }],
+        "SI_CUID": "Fp70xFmB.g4ArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295082
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/EEM_USER1",
+                "SI_NAME": "secSAPR3:RB1~100\/EEM_USER1",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:44 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 294995,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295138
+        }],
+        "SI_NAME": "RB1~100\/L0226363",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295140
+        }],
+        "SI_CUID": "Fp.0xFnU9AEArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295139
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0226363",
+                "SI_NAME": "secSAPR3:RB1~100\/L0226363",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:45 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295002,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295069
+        }],
+        "SI_NAME": "RB1~100\/L0266232",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295071
+        }],
+        "SI_CUID": "Fp.0xFlWcAIArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295070
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0266232",
+                "SI_NAME": "secSAPR3:RB1~100\/L0266232",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 291486
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:44 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295005,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295129
+        }],
+        "SI_NAME": "RB1~100\/L0307042",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295131
+        }],
+        "SI_CUID": "Fp.0xFkimQIArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295130
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0307042",
+                "SI_NAME": "secSAPR3:RB1~100\/L0307042",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:45 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295014,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295051
+        }],
+        "SI_NAME": "RB1~100\/L0349690",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295053
+        }],
+        "SI_CUID": "Fp.0xFlRFQMArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295052
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0349690",
+                "SI_NAME": "secSAPR3:RB1~100\/L0349690",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:43 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295178,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295254
+        }],
+        "SI_NAME": "RB1~100\/L0393214",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295256
+        }],
+        "SI_CUID": "FqL0xFl_rAAArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295255
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0393214",
+                "SI_NAME": "secSAPR3:RB1~100\/L0393214",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 291486
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:46 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295189,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295284
+        }],
+        "SI_NAME": "RB1~100\/L0406271",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295286
+        }],
+        "SI_CUID": "FqL0xFn6YQEArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295285
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0406271",
+                "SI_NAME": "secSAPR3:RB1~100\/L0406271",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:47 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295199,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295314
+        }],
+        "SI_NAME": "RB1~100\/L0411281",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295316
+        }],
+        "SI_CUID": "FqL0xFl77wEArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295315
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0411281",
+                "SI_NAME": "secSAPR3:RB1~100\/L0411281",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:47 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295203,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295329
+        }],
+        "SI_NAME": "RB1~100\/L0414153",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295331
+        }],
+        "SI_CUID": "FqL0xFmNUwIArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295330
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0414153",
+                "SI_NAME": "secSAPR3:RB1~100\/L0414153",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:48 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295204,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295332
+        }],
+        "SI_NAME": "RB1~100\/L0414155",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295334
+        }],
+        "SI_CUID": "FqL0xFluYQIArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295333
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0414155",
+                "SI_NAME": "secSAPR3:RB1~100\/L0414155",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 291486
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:48 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295370,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295430
+        }],
+        "SI_NAME": "RB1~100\/L0438436",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295432
+        }],
+        "SI_CUID": "FqT0xFkWhQsArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295431
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0438436",
+                "SI_NAME": "secSAPR3:RB1~100\/L0438436",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:49 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295375,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295445
+        }],
+        "SI_NAME": "RB1~100\/L0444350",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295447
+        }],
+        "SI_CUID": "FqT0xFn3ywsArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295446
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0444350",
+                "SI_NAME": "secSAPR3:RB1~100\/L0444350",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 291486
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:49 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295382,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295469
+        }],
+        "SI_NAME": "RB1~100\/L0450621",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295471
+        }],
+        "SI_CUID": "FqT0xFk7UAwArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295470
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0450621",
+                "SI_NAME": "secSAPR3:RB1~100\/L0450621",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:49 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295384,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295475
+        }],
+        "SI_NAME": "RB1~100\/L0452773",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295477
+        }],
+        "SI_CUID": "FqT0xFk0bwwArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295476
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0452773",
+                "SI_NAME": "secSAPR3:RB1~100\/L0452773",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:49 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295386,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295472
+        }],
+        "SI_NAME": "RB1~100\/L0455333",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295474
+        }],
+        "SI_CUID": "FqT0xFkmjAwArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295473
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0455333",
+                "SI_NAME": "secSAPR3:RB1~100\/L0455333",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:49 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295393,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295499
+        }],
+        "SI_NAME": "RB1~100\/L0458734",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295501
+        }],
+        "SI_CUID": "FqT0xFkz4AwArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295500
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0458734",
+                "SI_NAME": "secSAPR3:RB1~100\/L0458734",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:50 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295395,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295502
+        }],
+        "SI_NAME": "RB1~100\/L0461431",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295504
+        }],
+        "SI_CUID": "FqT0xFmx_AwArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295503
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0461431",
+                "SI_NAME": "secSAPR3:RB1~100\/L0461431",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:50 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295397,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295511
+        }],
+        "SI_NAME": "RB1~100\/L0461671",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295513
+        }],
+        "SI_CUID": "FqT0xFm8EA0ArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295512
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0461671",
+                "SI_NAME": "secSAPR3:RB1~100\/L0461671",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:50 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295398,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295514
+        }],
+        "SI_NAME": "RB1~100\/L0462961",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295516
+        }],
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295515
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0462961",
+                "SI_NAME": "secSAPR3:RB1~100\/L0462961",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_LASTLOGONTIME": "Thu Aug 30 09:54:47 GMT+01:00 2018",
+        "SI_CUID": "FqT0xFnTHA0ArksAAAAHQdXEAFBWtA7j",
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:50 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295412,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295553
+        }],
+        "SI_NAME": "RB1~100\/L0471870",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295555
+        }],
+        "SI_CUID": "FqT0xFlL4A0ArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295554
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0471870",
+                "SI_NAME": "secSAPR3:RB1~100\/L0471870",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:51 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295567,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295621
+        }],
+        "SI_NAME": "RB1~100\/L0474055",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295623
+        }],
+        "SI_CUID": "Fqf0xFkmKwgArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295622
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0474055",
+                "SI_NAME": "secSAPR3:RB1~100\/L0474055",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 291486
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:51 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295569,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295627
+        }],
+        "SI_NAME": "RB1~100\/L0475144",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295629
+        }],
+        "SI_CUID": "Fqf0xFn_RwgArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295628
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0475144",
+                "SI_NAME": "secSAPR3:RB1~100\/L0475144",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:51 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295578,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295654
+        }],
+        "SI_NAME": "RB1~100\/L0481335",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295656
+        }],
+        "SI_CUID": "Fqf0xFkVyQgArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295655
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0481335",
+                "SI_NAME": "secSAPR3:RB1~100\/L0481335",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 2,
+            "1": 1,
+            "2": 291486
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:52 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295591,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295693
+        }],
+        "SI_NAME": "RB1~100\/L0485487",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295695
+        }],
+        "SI_CUID": "Fqf0xFk6mAkArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295694
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0485487",
+                "SI_NAME": "secSAPR3:RB1~100\/L0485487",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:53 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295592,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295696
+        }],
+        "SI_NAME": "RB1~100\/L0485681",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295698
+        }],
+        "SI_CUID": "Fqf0xFnfpgkArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295697
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0485681",
+                "SI_NAME": "secSAPR3:RB1~100\/L0485681",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:53 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295596,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295708
+        }],
+        "SI_NAME": "RB1~100\/L0487799",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295710
+        }],
+        "SI_CUID": "Fqf0xFnW3wkArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295709
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0487799",
+                "SI_NAME": "secSAPR3:RB1~100\/L0487799",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:53 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295603,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295729
+        }],
+        "SI_NAME": "RB1~100\/L0488994",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295731
+        }],
+        "SI_CUID": "Fqf0xFn0WgoArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295730
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0488994",
+                "SI_NAME": "secSAPR3:RB1~100\/L0488994",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:53 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295604,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295732
+        }],
+        "SI_NAME": "RB1~100\/L0489897",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295734
+        }],
+        "SI_CUID": "Fqf0xFkqagoArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295733
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0489897",
+                "SI_NAME": "secSAPR3:RB1~100\/L0489897",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 1,
+            "1": 1
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:53 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295606,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295738
+        }],
+        "SI_NAME": "RB1~100\/L0492379",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295740
+        }],
+        "SI_CUID": "Fqf0xFmQhwoArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295739
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0492379",
+                "SI_NAME": "secSAPR3:RB1~100\/L0492379",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:53 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295609,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295750
+        }],
+        "SI_NAME": "RB1~100\/L0500618",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295752
+        }],
+        "SI_CUID": "Fqf0xFmvrwoArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295751
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0500618",
+                "SI_NAME": "secSAPR3:RB1~100\/L0500618",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:54 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295610,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295747
+        }],
+        "SI_NAME": "RB1~100\/L0505640",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295749
+        }],
+        "SI_CUID": "Fqf0xFmCuwoArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295748
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0505640",
+                "SI_NAME": "secSAPR3:RB1~100\/L0505640",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:54 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }, {
+        "SI_ID": 295611,
+        "SI_FAVORITES_FOLDER": [{
+            "SI_TOTAL": 1,
+            "1": 295759
+        }],
+        "SI_NAME": "RB1~100\/L0505801",
+        "SI_INBOX": [{
+            "SI_TOTAL": 1,
+            "1": 295761
+        }],
+        "SI_CUID": "Fqf0xFlPxwoArksAAAAHQdXEAFBWtA7j",
+        "SI_PERSONALCATEGORY": [{
+            "SI_TOTAL": 1,
+            "1": 295760
+        }],
+        "SI_ALIASES": [{
+            "SI_TOTAL": 1,
+            "1": [{
+                "SI_ID": "secSAPR3:RB1~100\/L0505801",
+                "SI_NAME": "secSAPR3:RB1~100\/L0505801",
+                "SI_DISABLED": false
+            }]
+        }],
+        "SI_NAMEDUSER": true,
+        "SI_CHANGEPASSWORD": false,
+        "SI_USERGROUPS": [{
+            "SI_TOTAL": 3,
+            "1": 1,
+            "2": 291486,
+            "3": 291487
+        }],
+        "SI_CREATION_TIME": "Fri Sep 22 12:31:54 GMT+01:00 2017",
+        "SI_KIND": "User"
+    }]
 }

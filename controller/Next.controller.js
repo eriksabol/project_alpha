@@ -3,18 +3,27 @@ sap.ui.define([
   "sap/m/MessageToast",
   "sap/ui/core/routing/History",
   "sap/m/ResponsivePopover",
-  "sap/m/Button"
-], function (Controller, MessageToast, History, ResponsivePopover, Button) {
+  "sap/m/Button",
+  "Project_2/model/formatter"
+], function (Controller, MessageToast, History, ResponsivePopover, Button, formatter) {
   "use strict";
 
   var that;
 
   return Controller.extend("Project_2.controller.Next", {
 
+    formatter: formatter,
+
     onInit: function () {
 
       console.log("Start loading onInit in UserAdmin.");
       console.log("Finished loading onInit in UserAdmin.");
+
+
+      var myFRSvalueModel = new sap.ui.model.json.JSONModel("model/servicesTwo.json");
+      this.getView().setModel(myFRSvalueModel, "servicesModel");
+
+      console.log(this.getView().getModel("servicesModel"));
 
       that=this;
 

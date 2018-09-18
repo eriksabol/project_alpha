@@ -59,6 +59,7 @@ sap.ui.define([], function() {
 			if (sDisabled) {
 
 				status = "Disabled";
+
 			} else {
 
 				status = "Enabled";
@@ -159,6 +160,21 @@ sap.ui.define([], function() {
 			
 			return false;
 			
+		},
+
+		getPercentage: function(sNumber) {
+
+			return parseFloat(Number(sNumber).toFixed(1));
+
+		},
+
+		getAvailableSpace: function(sNumber) {
+
+			var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+			if (sNumber == 0) return '0 Byte';
+			var i = parseInt(Math.floor(Math.log(sNumber) / Math.log(1024)));
+			return Math.round(sNumber / Math.pow(1024, i), 2) + ' ' + sizes[i] + " available";
+
 		}
 
 	};

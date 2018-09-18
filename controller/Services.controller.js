@@ -27,6 +27,8 @@ sap.ui.define([
 
           console.log(formatter);
 
+          sap.ui.getCore().setModel(oModel, "servicesModel");
+
           that = this;
 
         },
@@ -61,9 +63,12 @@ sap.ui.define([
 
           myWorkingModel.loadData("model/servicesTwo.json");
 
+ 
         },
 
         onPressLoadModel: function() {
+
+          that.getView().byId("servicesListTable").setBusy(true);
 
           var myWorkingModel = this.getView().getModel("servicesModel");
 
@@ -72,7 +77,6 @@ sap.ui.define([
             "query": "select SI_NAME, SI_ID, SI_CUID, SI_PID, SI_DISABLED, SI_SIA_HOSTNAME, SI_AUTOBOOT, SI_STATUSINFO, SI_REQUIRES_RESTART, SI_CURRENT_COMMAND_LINE, SI_METRICS, SI_EXPECTED_RUN_STATE, SI_SERVER_WAITING_FOR_RESOURCES from ci_systemobjects where si_kind='Server'"
 
           };
-
 
           $.ajax({
             url: "http://localhost:6405/biprws/v1/cmsquery",
@@ -94,6 +98,8 @@ sap.ui.define([
                 // console.log(this.getView());
                 // console.log(this.getView().getModel("servicesModel"));
                 that.getView().getModel("servicesModel").setJSON(JSON.stringify(jqXHRobject.responseJSON));
+                that.getView().byId("servicesListTable").setBusy(false);
+                MessageToast.show("Services reloaded");
                 //this.getView().getModel("servicesModel").loadData(JSON.stringify(jqXHRobject.responseJSON));
 
             },
@@ -101,6 +107,9 @@ sap.ui.define([
 
                 console.log("It's fail.");
                 console.log(jqXHRobject);
+
+                that.getView().byId("servicesListTable").setBusy(false);
+
 
             }
 

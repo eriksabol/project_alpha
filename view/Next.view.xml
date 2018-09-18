@@ -41,9 +41,9 @@
 							<NumericContent value="24" icon="sap-icon://line-charts" />
 						</TileContent>
 					</GenericTile>
-					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="File Repository" subheader="Storage" press="press">
-						<TileContent unit="MB" footer="Free">
-							<micro:RadialMicroChart percentage="95.9" valueColor="Neutral"/>
+					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="File Repository" subheader="Used storage" press="press">
+						<TileContent footer="{path:'servicesModel>/entries/1/SI_METRICS/0/2/0/SI_METRICS/0/6/0/SI_VALUE', formatter: '.formatter.getAvailableSpace'}">
+							<micro:RadialMicroChart percentage="{path:'servicesModel>/entries/1/SI_METRICS/0/2/0/SI_METRICS/0/9/0/SI_VALUE', formatter: '.formatter.getPercentage'}" valueColor="Neutral"/>
 						</TileContent>
 					</GenericTile>
 					<GenericTile class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="User Administration" subheader="Actions" press="onUserAdminPress">

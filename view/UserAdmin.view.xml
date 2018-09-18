@@ -9,6 +9,7 @@
     <pages>
       <Page title="UserAdmin Page" id="UserAdminID" showHeader="true" showNavButton="true" navButtonPress="onBackPress">
         <content>
+        <Button id="testLoadButton" type="Emphasized" text="Load Users" press="onPressLoadUsers" />
           <Table id="userListTable" title="test table" items="{userModel>/entries}">
             <columns>
               <Column>
@@ -20,13 +21,20 @@
               <Column>
                 <Label text="ID" />
               </Column>
+              <Column>
+                <Label text="Change_password" />
+              </Column>
+              <Column>
+                <Label text="Groups" />
+              </Column>                            
             </columns>
             <items>
               <ColumnListItem>
                 <cells>
-                  <Text text="{userModel>title}" />
-                  <Text text="{userModel>cuid}" />
-                  <Text text="{userModel>id}" />
+                  <Text text="{userModel>SI_NAME}" />
+                  <Text text="{userModel>SI_CUID}" />
+                  <Text text="{userModel>SI_ID}" />
+                  <Text text="{userModel>SI_CHANGEPASSWORD}" />
                 </cells>
               </ColumnListItem>
             </items>

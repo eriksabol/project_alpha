@@ -12,7 +12,7 @@
 							<!-- <Label text="WACS URL:" labelFor="input-wacs"/> -->
 							<Input id="input-wacs" required="true" placeholder="http://localhost:6405/biprws" value="http://localhost:6405/biprws" />
 							<!-- <Label text="Username:" labelFor="input-username" value="Administrator" /> -->
-							<Input id="input-username" placeholder="Username"/>
+							<Input id="input-username" placeholder="Username" value="Administrator"/>
 							<!-- <Label text="Password:" labelFor="input-password"/> -->
 							<Input id="input-password" type="Password" placeholder="Password"/>
 							<!-- <Label text="Authentication:" labelFor="input-authenticaton"/> -->
