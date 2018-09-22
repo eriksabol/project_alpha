@@ -4,8 +4,9 @@ sap.ui.define([
   "sap/ui/core/routing/History",
   "sap/m/ResponsivePopover",
   "sap/m/Button",
-  "Project_2/model/formatter"
-], function (Controller, MessageToast, History, ResponsivePopover, Button, formatter) {
+  "Project_2/model/formatter",
+  "Project_2/controller/TestRequest"
+], function (Controller, MessageToast, History, ResponsivePopover, Button, formatter, TestRequest) {
   "use strict";
 
   var that;
@@ -16,8 +17,8 @@ sap.ui.define([
 
     onInit: function () {
 
-      console.log("Start loading onInit in UserAdmin.");
-      console.log("Finished loading onInit in UserAdmin.");
+      console.log("Start loading onInit in Next.");
+      console.log("Finished loading onInit in Next.");
 
 
       var myFRSvalueModel = new sap.ui.model.json.JSONModel("model/servicesTwo.json");
@@ -25,7 +26,24 @@ sap.ui.define([
 
       console.log(this.getView().getModel("servicesModel"));
 
-      that=this;
+      that = this;
+
+      var test = TestRequest.customMethod();
+      console.log(test);
+
+
+      var logonTokenPromise = TestRequest.createDataPromise("htt://jsonplaceholder.typicode.com/posts", "/logon/long", "POST", "", {});
+      
+      logonTokenPromise.then((value) => {
+                        console.log('Promise resolved: ');
+                        console.log(value);
+                     }).catch((reason) => {
+                        console.log('Promise rejected: ');
+                        console.log(reason);
+                        console.log(reason.status + " " + reason.statusText);
+                     });
+
+      var logoffPromise = TestRequest.createDataPromise("htt://jsonplaceholder.typicode.com/posts", "/logoff", "POST", "", {});
 
     },
 
@@ -61,7 +79,9 @@ sap.ui.define([
 
           if (jqXHRobject.status === 0) {
 
-            sap.m.MessageBox.error("Please make sure that you have connectivity to WACS and try to logoff again.", {title: "Communication error (status: 0)" });
+            sap.m.MessageBox.error("Please make sure that you have connectivity to WACS and try to logoff again.", {
+              title: "Communication error (status: 0)"
+            });
             console.log(jqXHRobject);
 
           } else if (jqXHRobject.status == 200) {
@@ -79,25 +99,25 @@ sap.ui.define([
             // TODO rework so that also username is visible after logoff
             MessageToast.show("Username has logged off from BI4 environment.");
 
-          } 
-          
+          }
+
           // User je prihlasny cez API, ale medzitym mu niekto kill-ne session na BI4 environmente (kill, restart SIA/WACS, atd.)
           // TODO at this point it is also needed to get rid of logon token and redirect to Home page
-          else if(jqXHRobject.status === 401) {
+          else if (jqXHRobject.status === 401) {
 
-            
 
-            
+
+
             // TODO - na tejto hlaske nemoze dat user escape - musim stlacit a po stlaceni musi byt listener, ktory ma hodi na Home
             // TODO a vymaze referenciu na logonToken
 
-            sap.m.MessageBox.error("User session with your token has either expired or has been logged off from BI4. Please logon again.",  {title: "Not a valid logon token"} );
+            sap.m.MessageBox.error("User session with your token has either expired or has been logged off from BI4. Please logon again.", {
+              title: "Not a valid logon token"
+            });
             sap.ui.getCore().getModel("tokenModel").destroy();
             this.getRouter().navTo("Home", {}, true);
 
-          }
-
-          else {
+          } else {
 
             // Can't think of any else cases but it is here for completeness
             sap.m.MessageBox.error(jqXHRobject.statusText, {
