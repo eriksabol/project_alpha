@@ -32,17 +32,6 @@ sap.ui.define([
       console.log(test);
 
 
-      var logonTokenPromise = TestRequest.createDataPromise("htt://jsonplaceholder.typicode.com/posts", "/logon/long", "POST", "", {});
-      
-      logonTokenPromise.then((value) => {
-                        console.log('Promise resolved: ');
-                        console.log(value);
-                     }).catch((reason) => {
-                        console.log('Promise rejected: ');
-                        console.log(reason);
-                        console.log(reason.status + " " + reason.statusText);
-                     });
-
       var logoffPromise = TestRequest.createDataPromise("htt://jsonplaceholder.typicode.com/posts", "/logoff", "POST", "", {});
 
     },

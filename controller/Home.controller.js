@@ -1,8 +1,9 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
     "sap/m/MessageToast",
-    "sap/m/MessageBox"
-], function (Controller, MessageToast, MessageBox) {
+    "sap/m/MessageBox",
+    "Project_2/controller/TestRequest"
+], function (Controller, MessageToast, MessageBox, TestRequest) {
     "use strict";
 
     var that;
@@ -11,17 +12,21 @@ sap.ui.define([
 
         onInit: function () {
 
-            console.log("Start loading onInit in Home");
-
-            // 1. ty by sa malo chekcnut ci existuju uz nejake logontokeny v local storage-i. Ak
-            // ano, tak sa musia overit ci su aktivne a ak nie tak zmazat.
-
-            var oModel = new sap.ui.model.json.JSONModel();
-            var tokenModel = new sap.ui.model.json.JSONModel();
-
+            // outer reference
             that = this;
 
-            oModel.setData({
+            console.log("Start loading onInit in Home");
+
+            //! create all relevant models for login
+
+            /*
+            model for available authentication types - REST API cannot return authentication types without logging in,
+            therefore it must just defined manually
+            */
+            var authenticationModel = new sap.ui.model.json.JSONModel();
+            var tokenModel = new sap.ui.model.json.JSONModel();
+
+            authenticationModel.setData({
 
                 items: [
 
@@ -49,7 +54,8 @@ sap.ui.define([
 
             });
 
-            this.getView().setModel(oModel, "authenticationModel");
+            // set models
+            this.getView().setModel(authenticationModel, "authenticationModel");
             sap.ui.getCore().setModel(tokenModel, "tokenModel");
 
             console.log("Finished loading onInit in Home");
@@ -61,13 +67,11 @@ sap.ui.define([
 		},
 
         onPressLogin: function () {
-          
+
                 var wacsInput = this.getView().byId("input-wacs").getValue();
                 var usernameInput = this.getView().byId("input-username").getValue();
                 var passwordInput = this.getView().byId("input-password").getValue();
                 var authenticationInput = this.getView().byId("input-authentication").getSelectedKey();
-
-                // console.log(wacsInput + " " + usernameInput + " " + passwordInput + " " + authenticationInput);
 
                 var inputData = {
                     "clienttype": "",
@@ -75,6 +79,18 @@ sap.ui.define([
                     "password": passwordInput,
                     "auth": authenticationInput
                 };
+
+                // create promises
+                var logonTokenPromise = TestRequest.createDataPromise(wacsInput, "/logon/long", "POST", null, inputData);
+        
+                logonTokenPromise.then((value) => {
+                                    console.log('Promise resolved: ');
+                                    console.log(value);
+                                }).catch((reason) => {
+                                    console.log('Promise rejected: ');
+                                    console.log(reason);
+                                    console.log(reason.status + " " + reason.statusText);
+                                });
 
                 // ! Pocas testingu bez BI4 toto musi byt zakommentovane 
                 loginRequest(wacsInput, inputData, processTheOutput);

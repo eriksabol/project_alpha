@@ -23,7 +23,6 @@ sap.ui.define([
 
     return {
 
-
         customMethod: function () {
 
             willIGetNewPhone
@@ -56,7 +55,13 @@ sap.ui.define([
 
             });
 
-        }
+        },
+
+        evaluateFailedResponse: function(reject) {
+
+            
+
+        } 
 
 
 
