@@ -1,5 +1,6 @@
 sap.ui.define([
-    "Project_2/controller/TestRequest"
+    "Project_2/controller/TestRequest",
+    "sap/m/MessageBox"
 ], function () {
 
     var isMomHappy = true;
@@ -39,6 +40,31 @@ sap.ui.define([
 
         },
 
+        setInactivityMonitor: function() {
+
+            var t;
+
+            // Akonahle kliknem na nejaky element v okne tak sa resetuje timeout a pocita odznova
+            window.onload = resetTimer;
+            window.onclick = resetTimer;
+
+            function expired() {
+
+                //sap.m.MessageBox.information("You were now logged off due to inactivity.");
+                console.log("** You were logged off.")
+
+            }
+
+            function resetTimer() {
+
+                clearTimeout(t);
+                console.log("Timeout cleared");
+                t = setTimeout(expired, 5000);
+
+            }
+
+        },
+
         createDataPromise: function (sURL, sURLsuffix, sMethod, oHeaders, oInputData) {
 
             return new Promise(function (resolve, reject) {
@@ -59,11 +85,31 @@ sap.ui.define([
 
         evaluateFailedResponse: function(reject) {
 
-            
+            if(reject.status === 0){
+
+                sap.m.MessageBox.error("Communication error. Please check if you have connectivity to WACS server.", {
+                    title: "Error " + reject.status
+                });
+    
+            }
+        
+            else if(typeof reject.responseJSON !== "undefined" && reject.responseText !== "{}"){
+    
+                sap.m.MessageBox.error(reject.responseJSON.message, {
+                    title: reject.status + " " + reject.statusText
+                });
+    
+            }
+    
+            else {
+    
+                sap.m.MessageBox.error(reject.statusText, {
+                    title: "Error " + reject.status
+                });
+    
+            }
 
         } 
-
-
 
     };
 
