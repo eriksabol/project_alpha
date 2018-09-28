@@ -69,6 +69,9 @@ sap.ui.define([
 
             return new Promise(function (resolve, reject) {
 
+                console.log(sURL+sURLsuffix);
+                console.log(oHeaders);
+
                 $.ajax({
                     url: sURL + sURLsuffix,
                     method: sMethod,
@@ -80,6 +83,27 @@ sap.ui.define([
                 }).done(resolve).fail(reject);
 
             });
+
+        },
+
+        performLogoffPromise: function(sURL, sURLsuffix, sMethod, oHeaders) {
+
+
+            return new Promise(function (resolve, reject) {
+
+                console.log(sURL+sURLsuffix);
+                console.log(oHeaders);
+
+                $.ajax({
+                    url: sURL + sURLsuffix,
+                    method: sMethod,
+                    dataType: "json",
+                    headers: JSON.stringify(oHeaders)
+
+                }).done(resolve).fail(reject);
+
+            });
+
 
         },
 

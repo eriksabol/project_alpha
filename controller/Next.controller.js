@@ -17,22 +17,65 @@ sap.ui.define([
 
     onInit: function () {
 
+      that = this;
+
       console.log("Start loading onInit in Next.");
       console.log("Finished loading onInit in Next.");
 
+      var wacsURL = sap.ui.getCore().getModel("tokenModel").wacs;
 
-      var myFRSvalueModel = new sap.ui.model.json.JSONModel("model/servicesTwo.json");
+      // define models
+      var myFRSvalueModel = new sap.ui.model.json.JSONModel("model/servicesTwo.json"); // original
+      var frsModel = new sap.ui.model.json.JSONModel();
+      var servicesModel = new sap.ui.model.json.JSONModel();
+      var usersModel = new sap.ui.model.json.JSONModel();
+
+
+      // set View models
       this.getView().setModel(myFRSvalueModel, "servicesModel");
 
-      console.log(this.getView().getModel("servicesModel"));
+      // set Core models
+      sap.ui.getCore().setModel(frsModel, "frsModel");
+      sap.ui.getCore().setModel(servicesModel, "servicesModel");
+      sap.ui.getCore().setModel(usersModel, "usersModel");
 
-      that = this;
+      // console.log(this.getView().getModel("servicesModel"));
+      // var test = TestRequest.customMethod();
+      // console.log(test);
 
-      var test = TestRequest.customMethod();
-      console.log(test);
+      var servicesQuery = {
 
+        "query": "select SI_NAME, SI_ID, SI_CUID, SI_PID, SI_DISABLED, SI_SIA_HOSTNAME, SI_AUTOBOOT, SI_STATUSINFO, SI_REQUIRES_RESTART, SI_CURRENT_COMMAND_LINE, SI_METRICS, SI_EXPECTED_RUN_STATE, SI_SERVER_WAITING_FOR_RESOURCES from ci_systemobjects where si_kind='Server'"
 
-      var logoffPromise = TestRequest.createDataPromise("htt://jsonplaceholder.typicode.com/posts", "/logoff", "POST", "", {});
+      };
+
+      var servicesHeader = {
+
+        "X-SAP-LogonToken": String(sap.ui.getCore().getModel("tokenModel").getProperty("/logonToken")),
+        "Accept": "application/json",
+         "Content-Type": "application/json"
+
+      }
+
+      var servicesPromise = TestRequest.createDataPromise(wacsURL, "/v1/cmsquery", "POST", servicesHeader, servicesQuery);
+
+      servicesPromise.then((value) => {
+        console.log('Promise resolved: ');
+        console.log(value);
+
+        // Saving logon token to Core globally as JSONModel
+        sap.ui.getCore().getModel("servicesModel").setJSON(JSON.stringify(value.responseJSON));
+
+        console.log("Services data updated.")
+
+    }).catch((reason) => {
+        console.log('Promise rejected: ');
+        console.log(reason);
+        console.log(reason.status + " " + reason.statusText);
+
+        TestRequest.evaluateFailedResponse(reason);
+
+    });  
 
     },
 
@@ -51,9 +94,43 @@ sap.ui.define([
 
     onLogoffPress: function () {
 
+      // TODO to be checked why it is returning 400
+
+      // var headers = {
+      //       "X-SAP-LogonToken": sap.ui.getCore().getModel("tokenModel").getProperty("/logonToken")
+      //       }
+
+    //   console.log(headers);
+
+      
+    //   var logoffPromise = TestRequest.performLogoffPromise(sap.ui.getCore().getModel("tokenModel").wacs, "/v1/logoff", "POST", headers);
+
+    //   logoffPromise.then((value) => {
+    //     console.log('Promise resolved: ');
+    //     console.log(value);
+
+    //     // TODO - Odstranit logonToken z modelu
+    //     sap.ui.getCore().getModel("tokenModel").destroy();
+
+    //     // TODO - a presmerovat na Home
+    //     that.getRouter().navTo("Home", {}, true);
+        
+    //     // MessageToast positioned after navTo so that user can see it also after navigating away.
+    //     // TODO rework so that also username is visible after logoff
+    //     MessageToast.show("You were logged off.");
+
+    // }).catch((reason) => {
+    //     console.log('Promise rejected: ');
+    //     console.log(reason);
+    //     console.log(reason.status + " " + reason.statusText);
+
+    //     TestRequest.evaluateFailedResponse(reason);
+
+    // });
+
       // TODO - only helper variable - needs to be fixed by passing it
-      var wacsURL = "http://localhost:6405/biprws";
-      // var wacsURL = "www.sme.sk";
+ 
+      var wacsURL = sap.ui.getCore().getModel("tokenModel").wacs;
 
       $.ajax({
         url: wacsURL + "/logoff",
@@ -121,10 +198,8 @@ sap.ui.define([
 
         }
 
+      
       });
-
-      // ! Has to be commented when testing online
-      // this.getRouter().navTo("Home", {}, true);
 
     },
 
