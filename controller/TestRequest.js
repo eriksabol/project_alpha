@@ -114,7 +114,7 @@ sap.ui.define([
                 sap.m.MessageBox.error("Communication error. Please check if you have connectivity to WACS server.", {
                     title: "Error " + reject.status
                 });
-    
+
             }
         
             else if(typeof reject.responseJSON !== "undefined" && reject.responseText !== "{}"){

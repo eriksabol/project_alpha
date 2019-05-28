@@ -84,7 +84,7 @@ sap.ui.define([
             
             // set authentication URL to property
             sap.ui.getCore().getModel("tokenModel").wacs = wacsInput;
-            console.log(sap.ui.getCore().getModel("tokenModel").wacs);
+            console.log("console log after adding:" + sap.ui.getCore().getModel("tokenModel").wacs);
 
             logonTokenPromise.then((value) => {
                 console.log('Promise resolved: ');

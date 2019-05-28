@@ -23,6 +23,7 @@ sap.ui.define([
       console.log("Finished loading onInit in Next.");
 
       var wacsURL = sap.ui.getCore().getModel("tokenModel").wacs;
+      console.log("obsah wacsu: " + sap.ui.getCore().getModel("tokenModel").wacs);
 
       // define models
       var myFRSvalueModel = new sap.ui.model.json.JSONModel("model/servicesTwo.json"); // original

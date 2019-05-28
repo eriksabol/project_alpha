@@ -12,7 +12,8 @@
         <Button id="testButton" type="Emphasized" text="Change Property" press="onPressTest" />
         <Button id="testChangeButton" type="Emphasized" text="Change Model" press="onPressChangeModel" />
         <Button id="testLoadButton" type="Emphasized" text="Load Data" press="onPressLoadModel" />
-          <Table id="servicesListTable" title="Services" items="{servicesModel>/entries}">
+        <Button id="printButton" text="Print" icon="sap-icon://print" type="Emphasized" press="onPrint" />
+          <Table id="servicesListTable" title="Services" items="{ path: 'servicesModel>/entries', sorter: {path: 'servicesModel>SI_NAME'} }">
             <columns>
               <Column width="400px">
                 <Label text="Service_Name" />
@@ -42,7 +43,9 @@
 														
 															{path: 'servicesModel>SI_METRICS/0/2/0/SI_METRICS/0/11/0/SI_VALUE'},
 															{path: 'servicesModel>SI_METRICS/0/2/0/SI_METRICS/0/16/0/SI_VALUE'},
-															{path: 'servicesModel>SI_METRICS/0/1/0/SI_METRICS/0/16/0/SI_VALUE'}
+															{path: 'servicesModel>SI_METRICS/0/1/0/SI_METRICS/0/16/0/SI_VALUE'},
+                              {path: 'servicesModel>SI_METRICS/0/3/0/SI_METRICS/0/16/0/SI_VALUE'},
+                              {path: 'servicesModel>SI_METRICS/0/3/0/SI_METRICS/0/9/0/SI_VALUE'}
 														
 															], formatter: '.formatter.myPortFormatter'}" />
                   <Text text="{path:'servicesModel>SI_STATUSINFO/0/SI_STATUS', formatter: '.formatter.serverStatus'}" />
@@ -52,6 +55,7 @@
               </ColumnListItem>
             </items>
           </Table>
+        <Button id="loadMoreButton" type="Emphasized" text="More" press="onPressLoadMore" enabled="false" />
         </content>
       </Page>
     </pages>

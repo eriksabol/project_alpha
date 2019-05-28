@@ -105,7 +105,7 @@ sap.ui.define([], function() {
 
 		},
 
-		myPortFormatter: function(sPathOne, sPathTwo, sPathThree) {
+		myPortFormatter: function(sPathOne, sPathTwo, sPathThree, sPathFour, sPathFive) {
 
 			var rex = /^[0-9]{4,5}/;
 
@@ -114,6 +114,9 @@ sap.ui.define([], function() {
 			var oneValue = rex.exec(sPathOne);
 			var twoValue = rex.exec(sPathTwo);
 			var threeValue = rex.exec(sPathThree);
+			var fourValue = rex.exec(sPathFour);
+			var fiveValue = rex.exec(sPathFive);
+
 
 			if (oneValue) {
 				resultValue = oneValue;
@@ -126,6 +129,17 @@ sap.ui.define([], function() {
 			if (threeValue) {
 				resultValue = threeValue;
 			}
+
+			if (fourValue) {
+
+				resultValue = fourValue;
+			}
+
+			if (fiveValue) {
+
+				resultValue = fiveValue;
+			}
+
 
 			if (resultValue == null) {
 
