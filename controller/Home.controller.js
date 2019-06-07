@@ -23,6 +23,29 @@ sap.ui.define([
             var authenticationModel = new sap.ui.model.json.JSONModel();
             var tokenModel = new sap.ui.model.json.JSONModel();
 
+            // -- start testing model concept
+            var testModel = new sap.ui.model.json.JSONModel("model/services.json", true);
+            sap.ui.getCore().setModel(testModel, "testModel");
+
+            var myTestModel = sap.ui.getCore().getModel("testModel");
+            console.log(myTestModel);
+
+            var myData = myTestModel.getProperty("/entries/0");
+            console.log("myData with Properties: " + myData);
+
+            this.getView().setModel(testModel, "testViewModel");
+            var myViewTestModel = this.getView().getModel("testViewModel");
+            console.log(myViewTestModel);
+
+            var myViewData = myViewTestModel.getProperty("/oData/entries/");
+            console.log("myViewData with Properties: " + myViewData);
+            
+
+
+
+
+            // -- end of testing
+
             authenticationModel.setData({
 
                 items: [

@@ -52,6 +52,8 @@ sap.ui.define([
 
           var myWorkingModel = this.getView().getModel("servicesModel");
 
+          console.log(myWorkingModel);
+
           console.log(myWorkingModel.getProperty("/entries/0/SI_STATUSINFO/0/SI_STATUS"));
 
           console.log(myWorkingModel.setProperty("/entries/0/SI_STATUSINFO/0/SI_STATUS", getRandomInt(0, 7)));
@@ -69,7 +71,7 @@ sap.ui.define([
 
         onPrint: function() {
 
-          var prtContent = document.getElementById("myContainer");
+          var prtContent = document.getElementById("__xmlview3--servicesListTable");
           var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
           WinPrint.document.write(prtContent.innerHTML);
           WinPrint.document.close();
@@ -108,8 +110,15 @@ sap.ui.define([
                 // console.log(this.getView().getModel("servicesModel"));
                 
                 var localModel = that.getView().getModel("servicesModel");
-                      
-                that.getView().getModel("servicesModel").setJSON(JSON.stringify(jqXHRobject.responseJSON), true);
+                var localData = localModel.getData();
+                console.log(localData);
+                var jsonStringLocalData = JSON.stringify(localData);
+                console.log(jsonStringLocalData);
+               
+                console.log(JSON.stringify(jqXHRobject.responseJSON));
+                
+
+                //that.getView().getModel("servicesModel").setJSON(JSON.stringify(jqXHRobject.responseJSON), true);
 
                 that.getView().byId("servicesListTable").setBusy(false);
                 MessageToast.show("Services appended");
