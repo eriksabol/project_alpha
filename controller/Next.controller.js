@@ -15,6 +15,8 @@ sap.ui.define([
 
     formatter: formatter,
 
+    // test
+
     onInit: function () {
 
       that = this;
