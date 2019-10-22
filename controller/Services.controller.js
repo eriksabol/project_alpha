@@ -26,6 +26,8 @@ sap.ui.define([
 
           console.log("Finished loading onInit in Services.");
 
+          console.log("test");
+
           console.log(formatter);
 
           sap.ui.getCore().setModel(oModel, "servicesModel");
